@@ -1,4 +1,4 @@
-baseURL = "https://YOUR_USERNAME.github.io/my-reading-notes/"
+baseURL = "https://YOUR_USERNAME.github.io/papers-and-notes/"
 languageCode = "en-us"
 title = "Reading Notes"
 theme = "PaperMod"
