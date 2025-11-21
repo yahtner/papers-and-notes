@@ -1,0 +1,19 @@
+baseURL = "https://YOUR_USERNAME.github.io/my-reading-notes/"
+languageCode = "en-us"
+title = "Reading Notes"
+theme = "PaperMod"
+
+[params]
+  env = "production"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowToc = true
+  ShowBreadCrumbs = true
+  Fuse = true   # enable client-side search
+
+[outputs]
+  home = ["HTML", "JSON"]  # generates search index
+
+[taxonomies]
+  tag = "tags"
+  topic = "topics"
