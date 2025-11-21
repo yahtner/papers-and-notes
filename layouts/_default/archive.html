@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<h1>Papers</h1>
+
+<input id="searchInput"
+       type="text"
+       placeholder="Search papers..."
+       style="padding: 8px; width: 60%;">
+
+<div id="tagContainer" style="margin-top: 10px;">
+  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <button class="tagButton"
+            data-tag="{{ $name }}"
+            style="margin:4px; padding:4px 8px;">
+      {{ $name }}
+    </button>
+  {{ end }}
+</div>
+
+<div id="paperList" style="margin-top: 20px;">
+  {{ range .Pages }}
+    <div class="paperItem"
+         data-tags="{{ delimit .Params.tags "," }}">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+      <small>{{ .Date.Format "2006-01-02" }} — {{ .Params.tags }}</small>
+    </div>
+    <hr>
+  {{ end }}
+</div>
+
+<script src="/fuse.min.js"></script>
+<script src="/search.js"></script>
+
+{{ end }}
